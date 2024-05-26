@@ -4,7 +4,7 @@
       "albums": [
         {
           "title": "Randy Rhoads Tribute",
-          "image": "/images/randy_rhoads_tribute.jpg"
+          "image": "./images/randy_rhoads_tribute.jpg"
         }
       ]
     },
@@ -13,7 +13,7 @@
       "albums": [
         {
           "title": "Live Under a Blood Red Sky",
-          "image": "/images/live_under_a_blood_red_sky.jpg"
+          "image": "./images/live_under_a_blood_red_sky.jpg"
         }
       ]
     },
@@ -22,7 +22,7 @@
       "albums": [
         {
           "title": "Gold Ballads",
-          "image": "/images/gold_ballads.jpg"
+          "image": "./images/gold_ballads.jpg"
         }
       ]
     },
@@ -35,19 +35,19 @@
         },
         {
           "title": "The Wall",
-          "image": "/images/the_wall.jpg"
+          "image": "./images/the_wall.jpg"
         },
         {
           "title": "Wish You Were Here",
-          "image": "/images/wish_you_were_here.jpg"
+          "image": "./images/wish_you_were_here.jpg"
         },
         {
           "title": "The Final Cut",
-          "image": "/images/the_final_cut.jpg"
+          "image": "./images/the_final_cut.jpg"
         },
         {
           "title": "Atom Heart Mother",
-          "image": "/images/atom_heart_mother.jpg"
+          "image": "./images/atom_heart_mother.jpg"
         }
       ]
     },
@@ -56,7 +56,7 @@
       "albums": [
         {
           "title": "Toxicity",
-          "image": "/images/toxicity.jpg"
+          "image": "./images/toxicity.jpg"
         }
       ]
     },
@@ -65,7 +65,7 @@
       "albums": [
         {
           "title": "A Grand Don't Come for Free",
-          "image": "/images/a_grand_dont_come_for_free.jpg"
+          "image": "./images/a_grand_dont_come_for_free.jpg"
         }
       ]
     },
@@ -74,7 +74,7 @@
       "albums": [
         {
           "title": "Ritchie Blackmore's Rainbow",
-          "image": "/images/ritchie_blackmores_rainbow.jpg"
+          "image": "./images/ritchie_blackmores_rainbow.jpg"
         }
       ]
     },
@@ -83,7 +83,7 @@
       "albums": [
         {
           "title": "Greatest Hits",
-          "image": "/images/greatest_hits.jpg"
+          "image": "./images/greatest_hits.jpg"
         }
       ]
     },
@@ -92,7 +92,7 @@
       "albums": [
         {
           "title": "Nevermind",
-          "image": "/images/nevermind.jpg"
+          "image": "./images/nevermind.jpg"
         }
       ]
     },
@@ -101,7 +101,7 @@
       "albums": [
         {
           "title": "Ace of Spades",
-          "image": "/images/ace_of_spades.jpg"
+          "image": "./images/ace_of_spades.jpg"
         }
       ]
     },
@@ -110,19 +110,19 @@
       "albums": [
         {
           "title": "The Black Album",
-          "image": "/images/the_black_album.jpg"
+          "image": "./images/the_black_album.jpg"
         },
         {
           "title": "S&M2",
-          "image": "/images/sm2.jpg"
+          "image": "./images/sm2.jpg"
         },
         {
           "title": "And Justice for All",
-          "image": "/images/and_justice_for_all.jpg"
+          "image": "./images/and_justice_for_all.jpg"
         },
         {
           "title": "Kill 'Em All",
-          "image": "/images/kill_em_all.jpg"
+          "image": "./images/kill_em_all.jpg"
         }
       ]
     },
@@ -131,7 +131,7 @@
       "albums": [
         {
           "title": "Led Zeppelin 3",
-          "image": "/images/led_zeppelin_3.jpg"
+          "image": "./images/led_zeppelin_3.jpg"
         }
       ]
     },
@@ -140,7 +140,7 @@
       "albums": [
         {
           "title": "Smash Hits",
-          "image": "/images/smash_hits.jpg"
+          "image": "./images/smash_hits.jpg"
         }
       ]
     },
@@ -149,7 +149,7 @@
       "albums": [
         {
           "title": "Sings the Ballads of the True West",
-          "image": "/images/sings_the_ballads_of_the_true_west.jpg"
+          "image": "./images/sings_the_ballads_of_the_true_west.jpg"
         }
       ]
     },
@@ -158,7 +158,7 @@
       "albums": [
         {
           "title": "Iron Maiden",
-          "image": "/images/iron_maiden.jpg"
+          "image": "./images/iron_maiden.jpg"
         }
       ]
     },
@@ -167,11 +167,11 @@
       "albums": [
         {
           "title": "Machine Head",
-          "image": "/images/machine_head.jpg"
+          "image": "./images/machine_head.jpg"
         },
         {
           "title": "Deepest Purple: The Very Best of Deep Purple",
-          "image": "/images/deepest_purple_the_very_best_of_deep_purple.jpg"
+          "image": "./images/deepest_purple_the_very_best_of_deep_purple.jpg"
         }
       ]
     },
@@ -180,7 +180,7 @@
       "albums": [
         {
           "title": "The Greatest Hits",
-          "image": "/images/the_greatest_hits.jpg"
+          "image": "./images/the_greatest_hits.jpg"
         }
       ]
     },
@@ -189,7 +189,7 @@
       "albums": [
         {
           "title": "At Budokan",
-          "image": "/images/at_budokan.jpg"
+          "image": "./images/at_budokan.jpg"
         }
       ]
     },
@@ -198,15 +198,15 @@
       "albums": [
         {
           "title": "Sabotage",
-          "image": "/images/sabotage.jpg"
+          "image": "./images/sabotage.jpg"
         },
         {
           "title": "Collection Vol. 2",
-          "image": "/images/collection_vol_2.jpg"
+          "image": "./images/collection_vol_2.jpg"
         },
         {
           "title": "Black Sabbath",
-          "image": "/images/black_sabbath.jpg"
+          "image": "./images/black_sabbath.jpg"
         }
       ]
     },
@@ -215,7 +215,7 @@
       "albums": [
         {
           "title": "The Best of B.B. King",
-          "image": "/images/the_best_of_bb_king.jpg"
+          "image": "./images/the_best_of_bb_king.jpg"
         }
       ]
     }
