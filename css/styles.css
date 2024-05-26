@@ -1,13 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #000; /* Changed to black */
+    color: #fff; /* Changed text color to white for better readability */
     margin: 0;
     padding: 20px;
     text-align: center;
 }
 
 h1 {
-    color: #333;
+    color: #fff; /* Changed to white */
 }
 
 input {
@@ -16,11 +17,17 @@ input {
     margin: 20px 0;
     width: 80%;
     max-width: 500px;
+    background-color: #333; /* Changed to dark grey */
+    color: #fff; /* Changed to white */
+    border: 1px solid #555; /* Added border color */
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
+    background-color: #444; /* Changed to dark grey */
+    color: #fff; /* Changed to white */
+    border: 1px solid #555; /* Added border color */
 }
 
 #results {
@@ -32,18 +39,19 @@ button {
 }
 
 .record {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #111; /* Changed to dark grey */
+    border: 1px solid #333; /* Changed border color */
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adjusted shadow opacity */
     padding: 10px;
     max-width: 200px;
+    color: #fff; /* Changed to white */
 }
 
 .record img {
     max-width: 100%;
     height: auto;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #333; /* Changed border color */
     margin-bottom: 10px;
 }
 
@@ -54,5 +62,5 @@ button {
 
 .record p {
     font-size: 14px;
-    color: #666;
+    color: #bbb; /* Changed to light grey */
 }
