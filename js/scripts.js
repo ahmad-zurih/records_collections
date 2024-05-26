@@ -58,4 +58,12 @@ function searchRecords() {
     });
 }
 
-window.onload = fetchData;
+window.onload = function() {
+    fetchData();
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            searchRecords();
+        }
+    });
+};
