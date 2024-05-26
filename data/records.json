@@ -31,7 +31,7 @@
       "albums": [
         {
           "title": "Meddle",
-          "image": "/images/meddle.jpeg"
+          "image": "./images/meddle.jpeg"
         },
         {
           "title": "The Wall",
