@@ -219,6 +219,10 @@
             {
                 "title": "Black Sabbath",
                 "image": "./images/black_sabbath.jpg"
+            },
+            {
+                "title": "Paranoid",
+                "image": "./images/paranoid.jpg"
             }
         ]
     },
