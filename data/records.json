@@ -243,5 +243,14 @@
                 "image": "./images/painkiller.jpg"
             }
         ]
+    },
+    {
+        "name": "Eloy",
+        "albums": [
+            {
+                "title": "Ocean",
+                "image": "./images/ocean.jpg"
+            }
+        ]
     }
 ]
