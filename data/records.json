@@ -252,5 +252,14 @@
                 "image": "./images/ocean.jpg"
             }
         ]
+    },
+    {
+        "name": "Dio",
+        "albums": [
+            {
+                "title": "Holy Diver",
+                "image": "./images/holy_diver.jpg"
+            }
+        ]
     }
 ]
