@@ -1,10 +1,14 @@
+const recordsPerPage = 10; // Number of records per page
+let currentPage = 1; // Track the current page
+
 async function fetchData() {
     const response = await fetch('data/records.json');
     const data = await response.json();
     return data;
 }
 
-function searchRecords() {
+function searchRecords(page = 1) {
+    currentPage = page; // Update current page
     const query = document.getElementById('search-input').value.toLowerCase();
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';  // Clear previous results
@@ -46,10 +50,17 @@ function searchRecords() {
             return 0;
         });
 
-        if (filteredRecords.length === 0) {
+        // Calculate pagination details
+        const totalRecords = filteredRecords.length;
+        const totalPages = Math.ceil(totalRecords / recordsPerPage);
+        const startIndex = (currentPage - 1) * recordsPerPage;
+        const endIndex = startIndex + recordsPerPage;
+        const paginatedRecords = filteredRecords.slice(startIndex, endIndex);
+
+        if (paginatedRecords.length === 0) {
             resultsContainer.innerHTML = '<p>No results found</p>';
         } else {
-            filteredRecords.forEach(record => {
+            paginatedRecords.forEach(record => {
                 const recordDiv = document.createElement('div');
                 recordDiv.classList.add('record');
 
@@ -73,11 +84,42 @@ function searchRecords() {
         // Display the number of results found
         const resultCount = document.createElement('p');
         resultCount.classList.add('result-count');
-        resultCount.textContent = `${filteredRecords.length} result(s) found`;
+        resultCount.textContent = `${totalRecords} result(s) found`;
         resultsDiv.appendChild(resultCount);
+
+        // Add pagination controls
+        if (totalPages > 1) {
+            const paginationDiv = document.createElement('div');
+            paginationDiv.classList.add('pagination');
+
+            if (currentPage > 1) {
+                const prevButton = document.createElement('button');
+                prevButton.textContent = 'Previous';
+                prevButton.onclick = () => searchRecords(currentPage - 1);
+                paginationDiv.appendChild(prevButton);
+            }
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.textContent = i;
+                if (i === currentPage) {
+                    pageButton.classList.add('active');
+                }
+                pageButton.onclick = () => searchRecords(i);
+                paginationDiv.appendChild(pageButton);
+            }
+
+            if (currentPage < totalPages) {
+                const nextButton = document.createElement('button');
+                nextButton.textContent = 'Next';
+                nextButton.onclick = () => searchRecords(currentPage + 1);
+                paginationDiv.appendChild(nextButton);
+            }
+
+            resultsDiv.appendChild(paginationDiv);
+        }
     });
 }
-
 
 window.onload = function() {
     fetchData();

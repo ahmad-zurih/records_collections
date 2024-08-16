@@ -124,3 +124,28 @@ button:hover {
     color: #bbb; /* Light grey text color */
     width: 100%; /* Ensure the text takes up the full width */
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #444; /* Dark grey background */
+    color: #fff; /* White text color */
+    border: 1px solid #555; /* Dark grey border */
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #ff8c00; /* Highlight current page */
+    color: #000; /* Black text color */
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #555; /* Darker grey on hover */
+}
+
