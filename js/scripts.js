@@ -7,7 +7,11 @@ async function fetchData() {
 function searchRecords() {
     const query = document.getElementById('search-input').value.toLowerCase();
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = '';
+    resultsDiv.innerHTML = '';  // Clear previous results
+
+    const resultsContainer = document.createElement('div');
+    resultsContainer.classList.add('results-container');
+    resultsDiv.appendChild(resultsContainer);
 
     fetchData().then(records => {
         const filteredRecords = [];
@@ -33,7 +37,7 @@ function searchRecords() {
         });
 
         if (filteredRecords.length === 0) {
-            resultsDiv.innerHTML = '<p>No results found</p>';
+            resultsContainer.innerHTML = '<p>No results found</p>';
         } else {
             filteredRecords.forEach(record => {
                 const recordDiv = document.createElement('div');
@@ -52,9 +56,15 @@ function searchRecords() {
                 recordDiv.appendChild(img);
                 recordDiv.appendChild(title);
                 recordDiv.appendChild(artist);
-                resultsDiv.appendChild(recordDiv);
+                resultsContainer.appendChild(recordDiv);
             });
         }
+
+        // Display the number of results found
+        const resultCount = document.createElement('p');
+        resultCount.classList.add('result-count');
+        resultCount.textContent = `${filteredRecords.length} result(s) found`;
+        resultsDiv.appendChild(resultCount);
     });
 }
 
