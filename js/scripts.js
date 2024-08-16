@@ -14,8 +14,9 @@ function searchRecords() {
     resultsDiv.appendChild(resultsContainer);
 
     fetchData().then(records => {
-        const filteredRecords = [];
+        let filteredRecords = [];
 
+        // Filter records based on the query
         records.forEach(artist => {
             if (artist.name.toLowerCase().includes(query)) {
                 filteredRecords.push(...artist.albums.map(album => ({
@@ -34,6 +35,15 @@ function searchRecords() {
                     }
                 });
             }
+        });
+
+        // Sort filtered records alphabetically by artist name, then by album title
+        filteredRecords.sort((a, b) => {
+            if (a.artist.toLowerCase() < b.artist.toLowerCase()) return -1;
+            if (a.artist.toLowerCase() > b.artist.toLowerCase()) return 1;
+            if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
+            if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;
+            return 0;
         });
 
         if (filteredRecords.length === 0) {
@@ -67,6 +77,7 @@ function searchRecords() {
         resultsDiv.appendChild(resultCount);
     });
 }
+
 
 window.onload = function() {
     fetchData();
