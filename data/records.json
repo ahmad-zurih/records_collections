@@ -148,6 +148,10 @@
             {
                 "title": "Led Zeppelin 3",
                 "image": "./images/led_zeppelin_3.jpg"
+            },
+            {
+                "title": "Led Zeppelin IV",
+                "image": "./images/zeppelin_iv.jpg"
             }
         ]
     },
@@ -263,6 +267,33 @@
             {
                 "title": "Holy Diver",
                 "image": "./images/holy_diver.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Van Halen",
+        "albums": [
+            {
+                "title": "Van Halen",
+                "image": "./images/van_halen.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Slayer",
+        "albums": [
+            {
+                "title": "Reign in Blood",
+                "image": "./images/reign_in_blood.jpg"
+            }
+        ]
+    },
+    {
+        "name": "AC/DC",
+        "albums": [
+            {
+                "title": "Highway to Hell",
+                "image": "./images/highway_to_hell.jpg"
             }
         ]
     }
