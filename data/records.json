@@ -309,5 +309,45 @@
                 "image": "./images/gold.jpg"
             }
         ]
+    },
+    {
+        "name": "Beethoven",
+        "albums": [
+            {
+                "title": "Die 6 grossen Ouvert\u00fcren",
+                "image": "./images/beethoven1.jpg"
+            },
+            {
+                "title": "Klavierkonyert Nr.5",
+                "image": "./images/beethoven2.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Vivaldi",
+        "albums": [
+            {
+                "title": "Le Quattro Stagioni",
+                "image": "./images/vivaldi1.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Tchaikowsky",
+        "albums": [
+            {
+                "title": "Schwansee Wiener Symphoniker",
+                "image": "./images/swan_lake_wien.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Tschaikowsky",
+        "albums": [
+            {
+                "title": "Der Schwanensee Rom",
+                "image": "./images/swan_lake_rome.jpg"
+            }
+        ]
     }
 ]
