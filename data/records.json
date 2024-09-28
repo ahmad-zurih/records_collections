@@ -14,6 +14,10 @@
             {
                 "title": "Live Under a Blood Red Sky",
                 "image": "./images/live_under_a_blood_red_sky.jpg"
+            },
+            {
+                "title": "War",
+                "image": "./images/war.jpg"
             }
         ]
     },
@@ -294,6 +298,15 @@
             {
                 "title": "Highway to Hell",
                 "image": "./images/highway_to_hell.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Lynyrd Skynyrd",
+        "albums": [
+            {
+                "title": "Gold & Platinum",
+                "image": "./images/gold.jpg"
             }
         ]
     }
