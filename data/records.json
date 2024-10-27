@@ -349,5 +349,14 @@
                 "image": "./images/swan_lake_rome.jpg"
             }
         ]
+    },
+    {
+        "name": "The Beatles",
+        "albums": [
+            {
+                "title": "The Beatles / 1967-1970",
+                "image": "./images/beatles70.jpg"
+            }
+        ]
     }
 ]
