@@ -358,5 +358,18 @@
                 "image": "./images/beatles70.jpg"
             }
         ]
+    },
+    {
+        "name": "Queen",
+        "albums": [
+            {
+                "title": "I want to break free (single)",
+                "image": "./images/break_free.jpg"
+            },
+            {
+                "title": "Radio Ga Ga",
+                "image": "./images/radiogaga.jpg"
+            }
+        ]
     }
 ]
