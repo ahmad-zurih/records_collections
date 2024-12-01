@@ -60,6 +60,10 @@
             {
                 "title": "Animals",
                 "image": "./images/animals.jpg"
+            },
+            {
+                "title": "Ummagumma",
+                "image": "./images/ummagumma.jpg"
             }
         ]
     },
@@ -183,6 +187,10 @@
             {
                 "title": "Iron Maiden",
                 "image": "./images/iron_maiden.jpg"
+            },
+            {
+                "title": "Somewhere in Time",
+                "image": "./images/somewhere_in_time.jpg"
             }
         ]
     },
@@ -253,6 +261,10 @@
             {
                 "title": "Painkiller",
                 "image": "./images/painkiller.jpg"
+            },
+            {
+                "title": "British Steel",
+                "image": "./images/british_steel.jpg"
             }
         ]
     },
@@ -289,6 +301,10 @@
             {
                 "title": "Reign in Blood",
                 "image": "./images/reign_in_blood.jpg"
+            },
+            {
+                "title": "Seasons in the Abyss",
+                "image": "./images/seasons_in_abyss.jpg"
             }
         ]
     },
@@ -369,6 +385,24 @@
             {
                 "title": "Radio Ga Ga",
                 "image": "./images/radiogaga.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Gary Moore",
+        "albums": [
+            {
+                "title": "Empty Rooms",
+                "image": "./images/empty_rooms.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Janis Joplin",
+        "albums": [
+            {
+                "title": "Greatest Hits",
+                "image": "./images/janis_joplin.jpg"
             }
         ]
     }
