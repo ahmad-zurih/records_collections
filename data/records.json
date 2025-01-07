@@ -405,5 +405,14 @@
                 "image": "./images/janis_joplin.jpg"
             }
         ]
+    },
+    {
+        "name": "Michael Jackson",
+        "albums": [
+            {
+                "title": "Thriller",
+                "image": "./images/thriller.png"
+            }
+        ]
     }
 ]
