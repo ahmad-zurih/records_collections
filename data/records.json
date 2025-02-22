@@ -414,5 +414,14 @@
                 "image": "./images/thriller.png"
             }
         ]
+    },
+    {
+        "name": "Brayan Adams",
+        "albums": [
+            {
+                "title": "Reckless",
+                "image": "./images/reckless.png"
+            }
+        ]
     }
 ]
