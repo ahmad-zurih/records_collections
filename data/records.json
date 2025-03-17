@@ -423,5 +423,14 @@
                 "image": "./images/reckless.png"
             }
         ]
+    },
+    {
+        "name": "Fairuz",
+        "albums": [
+            {
+                "title": "Kifak Enta",
+                "image": "./images/fairuz.jpg"
+            }
+        ]
     }
 ]
