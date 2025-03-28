@@ -432,5 +432,14 @@
                 "image": "./images/fairuz.jpg"
             }
         ]
+    },
+    {
+        "name": "Savatage",
+        "albums": [
+            {
+                "title": "Gutter Ballet",
+                "image": "./images/gutter_ballet.jpg"
+            }
+        ]
     }
 ]
