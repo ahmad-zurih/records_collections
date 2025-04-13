@@ -441,5 +441,23 @@
                 "image": "./images/gutter_ballet.jpg"
             }
         ]
+    },
+    {
+        "name": "Arctic Monkeys",
+        "albums": [
+            {
+                "title": "Whatever people say I am, that's what I'm not",
+                "image": "./images/arctic_monkeys.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Coldplay",
+        "albums": [
+            {
+                "title": "Parachutes",
+                "image": "./images/parachutes.png"
+            }
+        ]
     }
 ]
