@@ -204,6 +204,14 @@
             {
                 "title": "Deepest Purple: The Very Best of Deep Purple",
                 "image": "./images/deepest_purple_the_very_best_of_deep_purple.jpg"
+            },
+            {
+                "title": "In Rock",
+                "image": "./images/in_rock.jpg"
+            },
+            {
+                "title": "Concerto for Group and Orchestra",
+                "image": "./images/concerto_deep_purple.jpg"
             }
         ]
     },
@@ -243,6 +251,10 @@
             {
                 "title": "Paranoid",
                 "image": "./images/paranoid.jpg"
+            },
+            {
+                "title": "Never Say Die",
+                "image": "./images/never_say_die.jpg"
             }
         ]
     },
@@ -457,6 +469,15 @@
             {
                 "title": "Parachutes",
                 "image": "./images/parachutes.png"
+            }
+        ]
+    },
+    {
+        "name": "The Doors",
+        "albums": [
+            {
+                "title": "Best of",
+                "image": "./images/doors_best.jpg"
             }
         ]
     }
