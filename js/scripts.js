@@ -11,13 +11,11 @@ function handleLocation() {
     const hash = window.location.hash;
 
     if (hash && hash.startsWith('#')) {
-        // Find the record that matches the slug in the URL
         const slug = hash.substring(1);
         const record = allRecords.find(r => r.slug === slug);
         if (record) {
             renderDetailsView(record);
         } else {
-            // If slug is invalid, go to the main view
             renderMainView();
         }
     } else {
@@ -31,7 +29,6 @@ function handleLocation() {
 function renderMainView() {
     document.getElementById('details-view').style.display = 'none';
     document.getElementById('main-view').style.display = 'block';
-    // If results are empty (e.g., on first load), run a default search
     if (document.getElementById('results').innerHTML === '') {
         searchRecords();
     }
@@ -99,12 +96,12 @@ function navigateToDetails(record) {
  */
 function navigateHome() {
     const state = { view: 'main' };
-    history.pushState(state, '', window.location.pathname); // Use pathname to clear hash
+    history.pushState(state, '', window.location.pathname);
     renderMainView();
 }
 
 
-// --- WIKIPEDIA API & PARSING (Same as before) ---
+// --- WIKIPEDIA API & PARSING (Updated to fix links) ---
 async function getWikipediaContent(albumTitle, artistName) {
     try {
         const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(albumTitle + " " + artistName)}&srlimit=1&format=json&origin=*`;
@@ -122,6 +119,14 @@ async function getWikipediaContent(albumTitle, artistName) {
         const doc = new DOMParser().parseFromString(htmlContent, 'text/html');
         const contentRoot = doc.querySelector('.mw-parser-output');
         if (!contentRoot) return null;
+
+        // *** NEW: Fix all relative Wikipedia links ***
+        contentRoot.querySelectorAll('a[href^="/wiki/"]').forEach(link => {
+            const href = link.getAttribute('href');
+            link.setAttribute('href', `https://en.wikipedia.org${href}`);
+            link.setAttribute('target', '_blank'); // Open in a new tab
+            link.setAttribute('rel', 'noopener noreferrer'); // For security
+        });
 
         contentRoot.querySelectorAll('.mw-editsection, sup.reference, .navbox').forEach(el => el.remove());
 
@@ -151,7 +156,7 @@ async function getWikipediaContent(albumTitle, artistName) {
 }
 
 
-// --- CORE APP LOGIC (Updated for Routing) ---
+// --- CORE APP LOGIC (Same as before) ---
 
 function searchRecords() {
     currentPage = 1;
@@ -172,7 +177,7 @@ function filterRecords(query) {
 
 function displayPaginatedResults(filteredRecords) {
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = ''; // Clear previous results
+    resultsDiv.innerHTML = '';
     const resultsContainer = document.createElement('div');
     resultsContainer.classList.add('results-container');
     resultsDiv.appendChild(resultsContainer);
@@ -206,7 +211,7 @@ function displayPaginatedResults(filteredRecords) {
     if (totalPages > 1) {
         const paginationDiv = document.createElement('div');
         paginationDiv.className = 'pagination';
-        // Pagination logic here (omitted for brevity, remains the same)
+        // Pagination logic here
         resultsDiv.appendChild(paginationDiv);
     }
 }
@@ -219,7 +224,6 @@ function clearSearch() {
 // --- INITIALIZATION ---
 
 async function initializeApp() {
-    // Fetch all records and prepare them with a URL-friendly slug
     const recordsData = await fetch('data/records.json').then(res => res.json());
     recordsData.forEach(artist => {
         artist.albums.forEach(album => {
@@ -231,11 +235,9 @@ async function initializeApp() {
     
     allRecords.sort((a, b) => a.slug.localeCompare(b.slug));
     
-    // Set up listeners and initial routing
     document.getElementById('search-input').addEventListener('keydown', e => e.key === 'Enter' && searchRecords());
     window.addEventListener('popstate', handleLocation);
     
-    // Initial call to the router to handle the page load
     handleLocation();
 }
 
