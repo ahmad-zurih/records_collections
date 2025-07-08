@@ -29,9 +29,6 @@ function handleLocation() {
 function renderMainView() {
     document.getElementById('details-view').style.display = 'none';
     document.getElementById('main-view').style.display = 'block';
-    if (document.getElementById('results').innerHTML === '') {
-        searchRecords();
-    }
 }
 
 /**
@@ -101,7 +98,7 @@ function navigateHome() {
 }
 
 
-// --- WIKIPEDIA API & PARSING (Updated to fix links) ---
+// --- WIKIPEDIA API & PARSING ---
 async function getWikipediaContent(albumTitle, artistName) {
     try {
         const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(albumTitle + " " + artistName)}&srlimit=1&format=json&origin=*`;
@@ -120,12 +117,11 @@ async function getWikipediaContent(albumTitle, artistName) {
         const contentRoot = doc.querySelector('.mw-parser-output');
         if (!contentRoot) return null;
 
-        // *** NEW: Fix all relative Wikipedia links ***
         contentRoot.querySelectorAll('a[href^="/wiki/"]').forEach(link => {
             const href = link.getAttribute('href');
             link.setAttribute('href', `https://en.wikipedia.org${href}`);
-            link.setAttribute('target', '_blank'); // Open in a new tab
-            link.setAttribute('rel', 'noopener noreferrer'); // For security
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
         });
 
         contentRoot.querySelectorAll('.mw-editsection, sup.reference, .navbox').forEach(el => el.remove());
@@ -156,7 +152,7 @@ async function getWikipediaContent(albumTitle, artistName) {
 }
 
 
-// --- CORE APP LOGIC (Same as before) ---
+// --- CORE APP LOGIC ---
 
 function searchRecords() {
     currentPage = 1;
@@ -208,10 +204,67 @@ function displayPaginatedResults(filteredRecords) {
     resultCount.textContent = `${totalRecords} result(s) found`;
     resultsDiv.appendChild(resultCount);
 
+    // *** NEW, ADVANCED PAGINATION LOGIC ***
     if (totalPages > 1) {
         const paginationDiv = document.createElement('div');
         paginationDiv.className = 'pagination';
-        // Pagination logic here
+
+        // Previous Button
+        const prevButton = document.createElement('button');
+        prevButton.textContent = 'Previous';
+        prevButton.disabled = currentPage === 1;
+        prevButton.onclick = () => {
+            currentPage--;
+            displayPaginatedResults(filteredRecords);
+        };
+        paginationDiv.appendChild(prevButton);
+
+        // Page Number Buttons
+        const pageWindow = 2; // How many pages to show around the current page
+        const pagesToShow = new Set();
+        pagesToShow.add(1); // Always show page 1
+        pagesToShow.add(totalPages); // Always show the last page
+
+        for (let i = currentPage - pageWindow; i <= currentPage + pageWindow; i++) {
+            if (i > 0 && i <= totalPages) {
+                pagesToShow.add(i);
+            }
+        }
+        
+        const sortedPages = Array.from(pagesToShow).sort((a, b) => a - b);
+        let lastPage = 0;
+        
+        sortedPages.forEach(page => {
+            if (lastPage > 0 && page > lastPage + 1) {
+                const ellipsis = document.createElement('span');
+                ellipsis.textContent = '...';
+                ellipsis.style.margin = '0 10px';
+                paginationDiv.appendChild(ellipsis);
+            }
+
+            const pageButton = document.createElement('button');
+            pageButton.textContent = page;
+            if (page === currentPage) {
+                pageButton.classList.add('active');
+            }
+            pageButton.onclick = () => {
+                currentPage = page;
+                displayPaginatedResults(filteredRecords);
+            };
+            paginationDiv.appendChild(pageButton);
+            lastPage = page;
+        });
+
+        // Next Button
+        const nextButton = document.createElement('button');
+        nextButton.textContent = 'Next';
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.onclick = () => {
+            currentPage++;
+            displayPaginatedResults(filteredRecords);
+        };
+        paginationDiv.appendChild(nextButton);
+        
         resultsDiv.appendChild(paginationDiv);
     }
 }
@@ -222,7 +275,6 @@ function clearSearch() {
 }
 
 // --- INITIALIZATION ---
-
 async function initializeApp() {
     const recordsData = await fetch('data/records.json').then(res => res.json());
     recordsData.forEach(artist => {
@@ -236,7 +288,19 @@ async function initializeApp() {
     allRecords.sort((a, b) => a.slug.localeCompare(b.slug));
     
     document.getElementById('search-input').addEventListener('keydown', e => e.key === 'Enter' && searchRecords());
-    window.addEventListener('popstate', handleLocation);
+    document.getElementById('clear-button').addEventListener('click', clearSearch);
+    
+    window.addEventListener('popstate', (e) => {
+        if (!e.state || e.state.view === 'main') {
+            renderMainView();
+            // When going back, we need to restore the main page content
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filtered = filterRecords(query);
+            displayPaginatedResults(filtered);
+        } else {
+            handleLocation();
+        }
+    });
     
     handleLocation();
 }
