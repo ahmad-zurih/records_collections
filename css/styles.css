@@ -74,7 +74,6 @@ button:hover {
     background-color: #555; /* Darker grey on hover */
 }
 
-/* Added style for the clear button */
 #clear-button {
     background-color: #7c4444; /* A muted red color */
 }
@@ -82,7 +81,6 @@ button:hover {
 #clear-button:hover {
     background-color: #945353;
 }
-
 
 .record {
     background-color: #111; /* Dark grey background */
@@ -92,6 +90,17 @@ button:hover {
     padding: 10px;
     max-width: 200px;
     color: #fff; /* White text color */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effect */
+}
+
+/* NEW: Styles for clickable cards */
+.record.clickable {
+    cursor: pointer;
+}
+
+.record.clickable:hover {
+    transform: scale(1.03); /* Slightly enlarge the card on hover */
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4); /* Add an orange glow */
 }
 
 .record img {
@@ -125,6 +134,12 @@ button:hover {
     justify-content: center;
     gap: 20px;
     width: 100%; /* Ensure full width to align properly */
+}
+
+/* NEW: Style to remove underline from the link wrapper */
+.results-container a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .result-count {
