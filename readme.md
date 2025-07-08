@@ -4,6 +4,6 @@ Repo that contains the code for a simple app that keeps track of the records I h
 
 ## Access the App
 
-The app is on [here](https://ahmad-zurih.github.io/records_collections/).
+The app is on [here](https://ahmad-zurih.github.io/records_collections/) if you would like to see the records I own :) 
 
 
