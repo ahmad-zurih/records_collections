@@ -67,12 +67,21 @@ button {
     color: #fff; /* White text color */
     border: 1px solid #555; /* Dark grey border */
     cursor: pointer;
+    margin-left: 5px; /* Add some space between buttons */
 }
 
 button:hover {
     background-color: #555; /* Darker grey on hover */
 }
 
+/* Added style for the clear button */
+#clear-button {
+    background-color: #7c4444; /* A muted red color */
+}
+
+#clear-button:hover {
+    background-color: #945353;
+}
 
 
 .record {
@@ -148,4 +157,3 @@ button:hover {
 .pagination button:hover:not(.active) {
     background-color: #555; /* Darker grey on hover */
 }
-

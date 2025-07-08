@@ -121,8 +121,16 @@ function searchRecords(page = 1) {
     });
 }
 
+/**
+ * Clears the search input and displays all records from the first page.
+ */
+function clearSearch() {
+    document.getElementById('search-input').value = '';
+    searchRecords(1); // Re-run search with empty query to show all records
+}
+
 window.onload = function() {
-    fetchData();
+    searchRecords(); // Display all records on page load
     const searchInput = document.getElementById('search-input');
     searchInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
