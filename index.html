@@ -12,11 +12,18 @@
             <li><a href="https://github.com/ahmad-zurih/records_collections" target="_blank">GitHub Repo</a></li>
         </ul>
     </nav>
-    <h1>Records Collection</h1>
-    <input type="text" id="search-input" placeholder="Search for albums or artists...">
-    <button onclick="searchRecords()">Search</button>
-    <button id="clear-button" onclick="clearSearch()">Clear</button>
-    <div id="results"></div>
+    
+    <div id="main-view">
+        <h1>Records Collection</h1>
+        <input type="text" id="search-input" placeholder="Search for albums or artists...">
+        <button onclick="searchRecords()">Search</button>
+        <button id="clear-button" onclick="clearSearch()">Clear</button>
+        <div id="results"></div>
+    </div>
+
+    <div id="details-view" style="display: none;">
+        </div>
+
     <script src="js/scripts.js"></script>
 </body>
 </html>

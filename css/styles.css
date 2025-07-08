@@ -90,23 +90,19 @@ button:hover {
     padding: 10px;
     max-width: 200px;
     color: #fff; /* White text color */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effect */
-}
-
-/* NEW: Styles for clickable cards */
-.record.clickable {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 }
 
-.record.clickable:hover {
-    transform: scale(1.03); /* Slightly enlarge the card on hover */
-    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4); /* Add an orange glow */
+.record:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4);
 }
 
 .record img {
     max-width: 100%;
     height: auto;
-    border-bottom: 1px solid #333; /* Dark grey border */
+    border-bottom: 1px solid #333;
     margin-bottom: 10px;
 }
 
@@ -117,7 +113,7 @@ button:hover {
 
 .record p {
     font-size: 14px;
-    color: #bbb; /* Light grey text color */
+    color: #bbb;
 }
 
 #results {
@@ -133,20 +129,14 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    width: 100%; /* Ensure full width to align properly */
-}
-
-/* NEW: Style to remove underline from the link wrapper */
-.results-container a {
-    text-decoration: none;
-    color: inherit;
+    width: 100%;
 }
 
 .result-count {
-    text-align: center; /* Center-align the text */
+    text-align: center;
     margin-top: 20px;
-    color: #bbb; /* Light grey text color */
-    width: 100%; /* Ensure the text takes up the full width */
+    color: #bbb;
+    width: 100%;
 }
 
 .pagination {
@@ -158,17 +148,101 @@ button:hover {
 .pagination button {
     padding: 10px 15px;
     margin: 0 5px;
-    background-color: #444; /* Dark grey background */
-    color: #fff; /* White text color */
-    border: 1px solid #555; /* Dark grey border */
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555;
     cursor: pointer;
 }
 
 .pagination button.active {
-    background-color: #ff8c00; /* Highlight current page */
-    color: #000; /* Black text color */
+    background-color: #ff8c00;
+    color: #000;
 }
 
 .pagination button:hover:not(.active) {
-    background-color: #555; /* Darker grey on hover */
+    background-color: #555;
+}
+
+/* --- NEW STYLES for Details View --- */
+#details-view {
+    margin: 80px auto 20px auto;
+    max-width: 800px;
+    text-align: left;
+    color: #ddd;
+}
+
+.back-button {
+    background-color: #555;
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    background-color: #666;
+}
+
+.details-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.details-header img {
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.details-header-text h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #fff;
+}
+
+.details-header-text h3 {
+    font-size: 1.5em;
+    color: #bbb;
+}
+
+.details-content h3 {
+    border-bottom: 1px solid #ff8c00;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    color: #fff;
+}
+
+.intro-description p {
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* Styling for scraped Wikipedia tables */
+.wikitable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    margin-top: 15px;
+}
+
+.wikitable th, .wikitable td {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: left;
+}
+
+.wikitable th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Styling for scraped Wikipedia lists */
+.track-listing ol {
+    padding-left: 20px;
+    list-style: decimal;
+}
+
+.track-listing li {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
