@@ -480,5 +480,23 @@
                 "image": "./images/doors_best.jpg"
             }
         ]
+    },
+    {
+        "name": "UFO",
+        "albums": [
+            {
+                "title": "UFO 2: Flying",
+                "image": "./images/flying.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Jethro Tull",
+        "albums": [
+            {
+                "title": "Aqualung",
+                "image": "./images/aqualung.jpg"
+            }
+        ]
     }
 ]
