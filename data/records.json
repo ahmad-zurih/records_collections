@@ -487,6 +487,10 @@
             {
                 "title": "UFO 2: Flying",
                 "image": "./images/flying.jpg"
+            },
+            {
+                "title": "UFO 1",
+                "image": "./images/ufo.jpg"
             }
         ]
     },
