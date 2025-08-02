@@ -502,5 +502,14 @@
                 "image": "./images/aqualung.jpg"
             }
         ]
+    },
+    {
+        "name": "The Clash",
+        "albums": [
+            {
+                "title": "London Calling",
+                "image": "./images/london_calling.jpg"
+            }
+        ]
     }
 ]
