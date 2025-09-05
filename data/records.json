@@ -511,5 +511,14 @@
                 "image": "./images/london_calling.jpg"
             }
         ]
+    },
+    {
+        "name": "Elvis Presley",
+        "albums": [
+            {
+                "title": "Sus 40 Mayores Exitos",
+                "image": "./images/elvis.jpg"
+            }
+        ]
     }
 ]
