@@ -520,5 +520,14 @@
                 "image": "./images/elvis.jpg"
             }
         ]
+    },
+    {
+        "name": "Thin Lizzy",
+        "albums": [
+            {
+                "title": "Lizzy Killers",
+                "image": "./images/thin_lizzy.jpg"
+            }
+        ]
     }
 ]
