@@ -529,5 +529,14 @@
                 "image": "./images/thin_lizzy.jpg"
             }
         ]
+    },
+    {
+        "name": "Radiohead",
+        "albums": [
+            {
+                "title": "Pablo Honey",
+                "image": "./images/radiohead.jpg"
+            }
+        ]
     }
 ]
