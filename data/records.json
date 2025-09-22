@@ -538,5 +538,14 @@
                 "image": "./images/radiohead.jpg"
             }
         ]
+    },
+    {
+        "name": "Guns N' Roses",
+        "albums": [
+            {
+                "title": "Guns N' Roses Greates Hits",
+                "image": "./images/guns-greatest-hits.jpg"
+            }
+        ]
     }
 ]
