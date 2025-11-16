@@ -64,6 +64,10 @@
             {
                 "title": "Ummagumma",
                 "image": "./images/ummagumma.jpg"
+            },
+            {
+                "title": "At Pompeii",
+                "image": "./images/pompeii.jpg"
             }
         ]
     },
