@@ -68,6 +68,10 @@
             {
                 "title": "At Pompeii",
                 "image": "./images/pompeii.jpg"
+            },
+            {
+                "title": "The Piper at the Gates of Dawn",
+                "image": "./images/The-Piper-at-the-Gates-of-Dawn.jpg"
             }
         ]
     },
@@ -259,6 +263,10 @@
             {
                 "title": "Never Say Die",
                 "image": "./images/never_say_die.jpg"
+            },
+            {
+                "title": "Heaven and Hell",
+                "image": "./images/Black_Sabbath_Heaven_and_Hell.jpg"
             }
         ]
     },
@@ -531,6 +539,10 @@
             {
                 "title": "Lizzy Killers",
                 "image": "./images/thin_lizzy.jpg"
+            },
+            {
+                "title": "Jailbreak",
+                "image": "./images/jailbreak.webp"
             }
         ]
     },
@@ -549,6 +561,24 @@
             {
                 "title": "Guns N' Roses Greates Hits",
                 "image": "./images/guns-greatest-hits.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Mayhem",
+        "albums": [
+            {
+                "title": "Daemon",
+                "image": "./images/mayhem_daemon.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Various",
+        "albums": [
+            {
+                "title": "Pulp Fiction soundtrack",
+                "image": "./images/pulp_fiction.jpg"
             }
         ]
     }
