@@ -360,6 +360,10 @@
             {
                 "title": "Klavierkonyert Nr.5",
                 "image": "./images/beethoven2.jpg"
+            },
+            {
+                "title": "F\u00fcr Elise",
+                "image": "./images/bethoven-fur-elise.jpg"
             }
         ]
     },
@@ -579,6 +583,32 @@
             {
                 "title": "Pulp Fiction soundtrack",
                 "image": "./images/pulp_fiction.jpg"
+            },
+            {
+                "title": "Classical music",
+                "image": "./images/various_classic.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Santana",
+        "albums": [
+            {
+                "title": "His Fantastic Instrumentals",
+                "image": "./images/santana-instrumental.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Mozart",
+        "albums": [
+            {
+                "title": "Symphonie Nr 40 and 36",
+                "image": "./images/mozart-paris.jpg"
+            },
+            {
+                "title": "Eine Kleine Nachtmusik",
+                "image": "./images/mozart-nachtmusik.jpg"
             }
         ]
     }
