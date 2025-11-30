@@ -72,6 +72,10 @@
             {
                 "title": "The Piper at the Gates of Dawn",
                 "image": "./images/The-Piper-at-the-Gates-of-Dawn.jpg"
+            },
+            {
+                "title": "A Momentary Lapse of Reason",
+                "image": "./images/momentary-lapse-of-reason.jpg"
             }
         ]
     },
@@ -267,6 +271,10 @@
             {
                 "title": "Heaven and Hell",
                 "image": "./images/Black_Sabbath_Heaven_and_Hell.jpg"
+            },
+            {
+                "title": "Live Evil",
+                "image": "./images/BlackSabbath-LiveEvil-Front.jpg"
             }
         ]
     },
@@ -422,6 +430,10 @@
             {
                 "title": "Empty Rooms",
                 "image": "./images/empty_rooms.jpg"
+            },
+            {
+                "title": "Still got the blues",
+                "image": "./images/Stillgottheblues.jpg"
             }
         ]
     },
@@ -609,6 +621,24 @@
             {
                 "title": "Eine Kleine Nachtmusik",
                 "image": "./images/mozart-nachtmusik.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Yngwie Malmsteen",
+        "albums": [
+            {
+                "title": "Odyssey",
+                "image": "./images/malmsteen-rising-force.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Dire Straits",
+        "albums": [
+            {
+                "title": "Dire Straits",
+                "image": "./images/DS_Dire_Straits.jpg"
             }
         ]
     }
