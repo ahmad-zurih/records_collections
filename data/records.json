@@ -641,5 +641,14 @@
                 "image": "./images/DS_Dire_Straits.jpg"
             }
         ]
+    },
+    {
+        "name": "Edvard Grieg",
+        "albums": [
+            {
+                "title": "Peer Gynt, Suite N1",
+                "image": "./images/grieg.jpg"
+            }
+        ]
     }
 ]
