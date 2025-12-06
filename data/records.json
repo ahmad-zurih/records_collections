@@ -172,6 +172,10 @@
             {
                 "title": "Led Zeppelin IV",
                 "image": "./images/zeppelin_iv.jpg"
+            },
+            {
+                "title": "Led Zeppelin",
+                "image": "./images/Led_Zeppelin_1.png"
             }
         ]
     },
