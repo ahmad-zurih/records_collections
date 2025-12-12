@@ -176,6 +176,10 @@
             {
                 "title": "Led Zeppelin",
                 "image": "./images/Led_Zeppelin_1.png"
+            },
+            {
+                "title": "Physical Graffiti",
+                "image": "./images/Physical-graffiti-reverse.jpg"
             }
         ]
     },
