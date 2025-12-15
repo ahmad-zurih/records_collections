@@ -658,5 +658,14 @@
                 "image": "./images/grieg.jpg"
             }
         ]
+    },
+    {
+        "name": "Blue Oyster Cult",
+        "albums": [
+            {
+                "title": "Secret Treaties",
+                "image": "./images/BlueOysterCultSecretTreaties.jpg"
+            }
+        ]
     }
 ]
