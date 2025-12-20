@@ -211,6 +211,10 @@
             {
                 "title": "Somewhere in Time",
                 "image": "./images/somewhere_in_time.jpg"
+            },
+            {
+                "title": "The Number of the Beast",
+                "image": "./images/IronMaiden_NumberOfBeast.jpg"
             }
         ]
     },
@@ -665,6 +669,15 @@
             {
                 "title": "Secret Treaties",
                 "image": "./images/BlueOysterCultSecretTreaties.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Dream Theater",
+        "albums": [
+            {
+                "title": "Images and Words",
+                "image": "./images/Dream_Theater_-_Images_and_Words.jpg"
             }
         ]
     }
