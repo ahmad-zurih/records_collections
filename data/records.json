@@ -287,6 +287,14 @@
             {
                 "title": "Live Evil",
                 "image": "./images/BlackSabbath-LiveEvil-Front.jpg"
+            },
+            {
+                "title": "Sabbath Bloody Sabbath",
+                "image": "./images/Black_Sabbath_SbS.jpg"
+            },
+            {
+                "title": "Seventh Star",
+                "image": "./images/Black-Sabbath-seventh-star.jpg"
             }
         ]
     },
@@ -491,6 +499,10 @@
             {
                 "title": "Gutter Ballet",
                 "image": "./images/gutter_ballet.jpg"
+            },
+            {
+                "title": "Hall of the Mountain King",
+                "image": "./images/SavatageMountainKing.jpg"
             }
         ]
     },
