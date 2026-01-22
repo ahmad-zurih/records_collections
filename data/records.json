@@ -692,5 +692,14 @@
                 "image": "./images/Dream_Theater_-_Images_and_Words.jpg"
             }
         ]
+    },
+    {
+        "name": "Ramones",
+        "albums": [
+            {
+                "title": "Ramones",
+                "image": "./images/Ramones_cover.jpg"
+            }
+        ]
     }
 ]
