@@ -4,25 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Records Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="https://github.com/ahmad-zurih/records_collections" target="_blank">GitHub Repo</a></li>
-        </ul>
-    </nav>
-    
-    <div id="main-view">
-        <h1>Records Collection</h1>
-        <input type="text" id="search-input" placeholder="Search for albums or artists...">
-        <button onclick="searchRecords()">Search</button>
-        <button id="clear-button" onclick="clearSearch()">Clear</button>
-        <div id="results"></div>
-    </div>
-
-    <div id="details-view" style="display: none;">
+        <div class="nav-inner">
+            <a class="brand" href="#">
+                <span class="brand-icon">&#9835;</span>
+                <span>Records Collection</span>
+            </a>
+            <ul>
+                <li><a href="https://github.com/ahmad-zurih/records_collections" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <main id="main-view">
+        <header class="hero">
+            <h1>Records Collection</h1>
+            <p class="hero-subtitle">Browse and search the vinyl &amp; CD collection.</p>
+        </header>
+
+        <div class="search-bar">
+            <div class="search-field">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="search-input" placeholder="Search for albums or artists...">
+            </div>
+            <button id="search-button">Search</button>
+            <button id="clear-button">Clear</button>
+        </div>
+
+        <div id="results"></div>
+    </main>
+
+    <section id="details-view" style="display: none;"></section>
 
     <script src="js/scripts.js"></script>
 </body>

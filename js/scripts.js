@@ -1,6 +1,7 @@
 const recordsPerPage = 10;
 let currentPage = 1;
 let allRecords = []; // Store all records globally for routing
+const PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='100%25' height='100%25' fill='%231f1f25'/%3E%3Ctext x='50%25' y='50%25' font-size='110' fill='%23ff8c00' text-anchor='middle' dominant-baseline='central'%3E%E2%99%AB%3C/text%3E%3C/svg%3E";
 function debounce(fn, delay) {
     let timer;
     return (...args) => {
@@ -70,7 +71,7 @@ async function renderDetailsView(record) {
     detailsView.innerHTML = `
         <button class="back-button" onclick="navigateHome()">← Back to Search</button>
         <div class="details-header">
-            <img src="${record.image}" alt="${record.title}">
+            <img src="${record.image}" alt="${record.title}" loading="lazy" onerror="this.onerror=null;this.src=PLACEHOLDER_IMG;">
             <div class="details-header-text">
                 <h2>${record.title}</h2>
                 <h3>by ${record.artist}</h3>
@@ -204,7 +205,7 @@ function displayPaginatedResults(filteredRecords) {
             const recordDiv = document.createElement('div');
             recordDiv.className = 'record';
             recordDiv.innerHTML = `
-                <img src="${record.image}" alt="${record.title}">
+                <img src="${record.image}" alt="${record.title}" loading="lazy" onerror="this.onerror=null;this.src=PLACEHOLDER_IMG;">
                 <h2>${record.title}</h2>
                 <p>by ${record.artist}</p>
             `;
@@ -303,6 +304,7 @@ async function initializeApp() {
     
     document.getElementById('search-input').addEventListener('keydown', e => e.key === 'Enter' && searchRecords());
     document.getElementById('search-input').addEventListener('input', debounce(searchRecords, 300));
+        document.getElementById('search-button').addEventListener('click', searchRecords);
     document.getElementById('clear-button').addEventListener('click', clearSearch);
     
     window.addEventListener('popstate', (e) => {
