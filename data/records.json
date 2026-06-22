@@ -107,15 +107,6 @@
         ]
     },
     {
-        "name": "Queens",
-        "albums": [
-            {
-                "title": "Greatest Hits",
-                "image": "./images/greatest_hits.jpg"
-            }
-        ]
-    },
-    {
         "name": "Nirvana",
         "albums": [
             {
@@ -125,7 +116,7 @@
         ]
     },
     {
-        "name": "Motorheads",
+        "name": "Motörhead",
         "albums": [
             {
                 "title": "Ace of Spades",
@@ -382,7 +373,7 @@
         "name": "Beethoven",
         "albums": [
             {
-                "title": "Die 6 grossen Ouvert\u00fcren",
+                "title": "Die 6 grossen Ouvertüren",
                 "image": "./images/beethoven1.jpg"
             },
             {
@@ -390,7 +381,7 @@
                 "image": "./images/beethoven2.jpg"
             },
             {
-                "title": "F\u00fcr Elise",
+                "title": "Für Elise",
                 "image": "./images/bethoven-fur-elise.jpg"
             }
         ]
@@ -405,17 +396,12 @@
         ]
     },
     {
-        "name": "Tchaikowsky",
+        "name": "Tchaikovsky",
         "albums": [
             {
                 "title": "Schwansee Wiener Symphoniker",
                 "image": "./images/swan_lake_wien.jpg"
-            }
-        ]
-    },
-    {
-        "name": "Tschaikowsky",
-        "albums": [
+            },
             {
                 "title": "Der Schwanensee Rom",
                 "image": "./images/swan_lake_rome.jpg"
@@ -441,6 +427,10 @@
             {
                 "title": "Radio Ga Ga",
                 "image": "./images/radiogaga.jpg"
+            },
+            {
+                "title": "Greatest Hits",
+                "image": "./images/greatest_hits.jpg"
             }
         ]
     },
@@ -476,7 +466,7 @@
         ]
     },
     {
-        "name": "Brayan Adams",
+        "name": "Bryan Adams",
         "albums": [
             {
                 "title": "Reckless",
@@ -599,7 +589,7 @@
         "name": "Guns N' Roses",
         "albums": [
             {
-                "title": "Guns N' Roses Greates Hits",
+                "title": "Guns N' Roses Greatest Hits",
                 "image": "./images/guns-greatest-hits.jpg"
             }
         ]
@@ -652,7 +642,7 @@
         "name": "Yngwie Malmsteen",
         "albums": [
             {
-                "title": "Odyssey",
+                "title": "Rising Force",
                 "image": "./images/malmsteen-rising-force.jpg"
             }
         ]
