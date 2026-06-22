@@ -701,5 +701,14 @@
                 "image": "./images/Ramones_cover.jpg"
             }
         ]
+    },
+    {
+        "name": "Green Day",
+        "albums": [
+            {
+                "title": "American Idiot",
+                "image": "./images/green_day_ad.jpg"
+            }
+        ]
     }
 ]
