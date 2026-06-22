@@ -165,6 +165,42 @@ async function getWikipediaContent(albumTitle, artistName) {
 }
 
 
+// --- COLLECTION STATS ---
+function renderCollectionStats() {
+    const statsEl = document.getElementById('collection-stats');
+    if (!statsEl) return;
+
+    const totalAlbums = allRecords.length;
+    const counts = {};
+    allRecords.forEach(record => {
+        counts[record.artist] = (counts[record.artist] || 0) + 1;
+    });
+
+    const artists = Object.keys(counts).sort((a, b) => a.localeCompare(b));
+    const totalArtists = artists.length;
+
+    const perArtistRows = artists.map(artist => {
+        const safeArtist = artist.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return `
+            <li>
+                <span class="stat-artist">${safeArtist}</span>
+                <span class="stat-count">${counts[artist]}</span>
+            </li>`;
+    }).join('');
+
+    statsEl.innerHTML = `
+        <div class="stats-summary">
+            <span class="stat-pill"><strong>${totalAlbums}</strong> albums</span>
+            <span class="stat-pill"><strong>${totalArtists}</strong> artists</span>
+        </div>
+        <details class="stats-details">
+            <summary>Albums per artist</summary>
+            <ul class="stats-list">${perArtistRows}</ul>
+        </details>
+    `;
+}
+
+
 // --- CORE APP LOGIC ---
 
 function sortRecords(records) {
@@ -319,6 +355,8 @@ async function initializeApp() {
     });
     
     
+    renderCollectionStats();
+
     document.getElementById('search-input').addEventListener('keydown', e => e.key === 'Enter' && searchRecords());
     document.getElementById('search-input').addEventListener('input', debounce(searchRecords, 300));
         document.getElementById('search-button').addEventListener('click', searchRecords);
