@@ -1,6 +1,14 @@
 const recordsPerPage = 10;
 let currentPage = 1;
 let allRecords = []; // Store all records globally for routing
+function debounce(fn, delay) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+    };
+}
+
 
 // --- VIEW & NAVIGATION MANAGEMENT ---
 
@@ -288,6 +296,7 @@ async function initializeApp() {
     allRecords.sort((a, b) => a.slug.localeCompare(b.slug));
     
     document.getElementById('search-input').addEventListener('keydown', e => e.key === 'Enter' && searchRecords());
+    document.getElementById('search-input').addEventListener('input', debounce(searchRecords, 300));
     document.getElementById('clear-button').addEventListener('click', clearSearch);
     
     window.addEventListener('popstate', (e) => {
