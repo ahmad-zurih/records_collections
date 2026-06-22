@@ -1,5 +1,6 @@
 const recordsPerPage = 10;
 let currentPage = 1;
+let currentSort = 'artist';
 let allRecords = []; // Store all records globally for routing
 const PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='100%25' height='100%25' fill='%231f1f25'/%3E%3Ctext x='50%25' y='50%25' font-size='110' fill='%23ff8c00' text-anchor='middle' dominant-baseline='central'%3E%E2%99%AB%3C/text%3E%3C/svg%3E";
 function debounce(fn, delay) {
@@ -131,11 +132,8 @@ async function getWikipediaContent(albumTitle, artistName) {
         const contentRoot = doc.querySelector('.mw-parser-output');
         if (!contentRoot) return null;
 
-        contentRoot.querySelectorAll('a[href^="/wiki/"]').forEach(link => {
-            const href = link.getAttribute('href');
-            link.setAttribute('href', `https://en.wikipedia.org${href}`);
-            link.setAttribute('target', '_blank');
-            link.setAttribute('rel', 'noopener noreferrer');
+        contentRoot.querySelectorAll('a').forEach(link => {
+            link.replaceWith(...link.childNodes);
         });
 
         contentRoot.querySelectorAll('.mw-editsection, sup.reference, .navbox').forEach(el => el.remove());
@@ -169,10 +167,28 @@ async function getWikipediaContent(albumTitle, artistName) {
 
 // --- CORE APP LOGIC ---
 
+function sortRecords(records) {
+    const sorted = [...records];
+    switch (currentSort) {
+        case 'title':
+            sorted.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+        case 'recent':
+            sorted.sort((a, b) => b.order - a.order);
+            break;
+        case 'artist':
+        default:
+            sorted.sort((a, b) =>
+                a.artist.localeCompare(b.artist) || a.title.localeCompare(b.title));
+            break;
+    }
+    return sorted;
+}
+
 function searchRecords() {
     currentPage = 1;
     const query = document.getElementById('search-input').value.toLowerCase();
-    const filtered = filterRecords(query);
+    const filtered = sortRecords(filterRecords(query));
     displayPaginatedResults(filtered);
 }
 
@@ -292,27 +308,32 @@ function clearSearch() {
 // --- INITIALIZATION ---
 async function initializeApp() {
     const recordsData = await fetch('data/records.json').then(res => res.json());
+    let order = 0;
     recordsData.forEach(artist => {
         artist.albums.forEach(album => {
             const record = { ...album, artist: artist.name };
             record.slug = `${artist.name} ${album.title}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+            record.order = order++;
             allRecords.push(record);
         });
     });
     
-    allRecords.sort((a, b) => a.slug.localeCompare(b.slug));
     
     document.getElementById('search-input').addEventListener('keydown', e => e.key === 'Enter' && searchRecords());
     document.getElementById('search-input').addEventListener('input', debounce(searchRecords, 300));
         document.getElementById('search-button').addEventListener('click', searchRecords);
     document.getElementById('clear-button').addEventListener('click', clearSearch);
+    document.getElementById('sort-select').addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        searchRecords();
+    });
     
     window.addEventListener('popstate', (e) => {
         if (!e.state || e.state.view === 'main') {
             renderMainView();
             // When going back, we need to restore the main page content
             const query = document.getElementById('search-input').value.toLowerCase();
-            const filtered = filterRecords(query);
+            const filtered = sortRecords(filterRecords(query));
             displayPaginatedResults(filtered);
         } else {
             handleLocation();

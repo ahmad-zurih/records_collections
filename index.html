@@ -25,7 +25,7 @@
     <main id="main-view">
         <header class="hero">
             <h1>Records Collection</h1>
-            <p class="hero-subtitle">Browse and search the vinyl &amp; CD collection.</p>
+            <p class="hero-subtitle">Browse and search the vinyl collection.</p>
         </header>
 
         <div class="search-bar">
@@ -37,6 +37,14 @@
             <button id="clear-button">Clear</button>
         </div>
 
+        <div class="sort-bar">
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select">
+                <option value="artist">Artist (A&ndash;Z)</option>
+                <option value="title">Album title (A&ndash;Z)</option>
+                <option value="recent">Recently added</option>
+            </select>
+        </div>
         <div id="results"></div>
     </main>
 

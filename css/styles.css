@@ -212,6 +212,44 @@ button:active {
     background: var(--bg-elevated);
 }
 
+.sort-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 16px auto 0;
+    max-width: 720px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.sort-bar label {
+    font-weight: 500;
+}
+
+#sort-select {
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+#sort-select:hover {
+    border-color: var(--border-light);
+}
+
+#sort-select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
 /* --- RESULTS --- */
 #results {
     display: flex;
