@@ -63,6 +63,10 @@ async function renderDetailsView(record) {
         tracklistHtml = content.tracklist;
     }
 
+    const wikiLinkHtml = content && content.url
+        ? `<a class="wiki-link" href="${content.url}" target="_blank" rel="noopener noreferrer">Read more on Wikipedia ↗</a>`
+        : '';
+
     detailsView.innerHTML = `
         <button class="back-button" onclick="navigateHome()">← Back to Search</button>
         <div class="details-header">
@@ -82,6 +86,7 @@ async function renderDetailsView(record) {
                 ${tracklistHtml}
             </div>
         </div>
+        ${wikiLinkHtml}
     `;
 }
 
@@ -152,7 +157,8 @@ async function getWikipediaContent(albumTitle, artistName) {
             }
         }
         
-        return { intro: intro || null, tracklist: tracklistHtml || null };
+        const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(pageTitle)}`;
+        return { intro: intro || null, tracklist: tracklistHtml || null, url: wikiUrl };
     } catch (error) {
         console.error("Failed to fetch or parse Wikipedia content:", error);
         return null;

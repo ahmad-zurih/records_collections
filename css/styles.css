@@ -246,3 +246,19 @@ button:hover {
     margin-bottom: 10px;
     line-height: 1.5;
 }
+.wiki-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #ff8c00;
+    text-decoration: none;
+    font-size: 1em;
+    border: 1px solid #ff8c00;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.wiki-link:hover {
+    background-color: #ff8c00;
+    color: #000;
+}
